@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+    <meta charset="UTF-8">
+    <title>Shoes Shop</title>
+</head>
+<body>
+    <h1>Shoes Shop</h1>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Denumire</th>
+                    <th>Pret</th>
+                    <th>In stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product: ${products}">
+                    <td th:text="${product.name}">Cizme</td>
+                    <td th:text="${product.price}">15</td>
+                    <td th:text="${product.inStock}">true</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h1>Adaugati o pereche de pantofi:</h1>
+        <form method="post">
+            <input type="text" id="name" name="name" placeholder="Denumire">
+            <input type="text" id="price" name="price" placeholder="Pret">
+            <input type="text" id="inStock" name="inStock" placeholder="In stock">
+            <input type="submit" value="Adauga" />
+        </form>
+    </div>
+</body>
+</html>
